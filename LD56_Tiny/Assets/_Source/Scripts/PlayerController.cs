@@ -144,10 +144,10 @@ public class PlayerController : MonoBehaviour
         _verticalLookRotation -= mouseY;
         _verticalLookRotation = Mathf.Clamp(_verticalLookRotation, -90f, 90f);
 
-        if (_verticalLookRotation >= 25f)
+        if (_verticalLookRotation >= 30f)
         {
 
-            _verticalLookRotation = 25f;
+            _verticalLookRotation = 30f;
         }
         _transposer.m_FollowOffset.y = _verticalLookRotation;
         //_cameraTransform.localRotation = Quaternion.Euler(_verticalLookRotation, 0f, 0f);
