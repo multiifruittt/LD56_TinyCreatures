@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
 
         if (_characterController.isGrounded)
         {
-            //_velocity.y = -2f;
+            //_velocity.y -= _gravity / 2 * Time.deltaTime;
         }
         else
         {
