@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private List <Scrollbar>  scrollbars;
     [SerializeField] private List<JumpForceRanges> jumpForceRange;
     [SerializeField] private Animator animator;
-    [SerializeField] private CinemachineVirtualCamera cinemachine;
+    [SerializeField] private CinemachineVirtualCamera cinemachine; 
+    [SerializeField] private AudioSource moveSound;
 
     private Health _health;
     private CinemachineTransposer _transposer;
@@ -58,8 +59,11 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+            
+        
+        
 
-        if(isRunning)
+        if (isRunning)
         {
             scrollbars[index].gameObject.active = false;
         }
