@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_Presentation/Scenes/StartScene.unity
     guid: 86efaf47a0aae034087e7f850c1bd5ff
   - enabled: 1
+    path: Assets/_Presentation/Scenes/ComicScene.unity
+    guid: c7760ab3bb53bb84ea652e904d30bc05
+  - enabled: 1
     path: Assets/_Presentation/Scenes/Level.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

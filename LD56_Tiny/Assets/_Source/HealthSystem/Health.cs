@@ -13,6 +13,7 @@ public class Health
 
     public event Action<int> OnHealthChange;
     public event Action OnDeath;
+    public event Action OnGameOver;
     public void ResetScore()
     {
         HealthValue = EndValue;
@@ -28,15 +29,17 @@ public class Health
     public void AddScore(int adding)
     {
         HealthValue += adding;
-        OnDeath?.Invoke();
+        
         if(HealthValue > 0)
         {
             OnHealthChange?.Invoke(HealthValue);
+            OnDeath?.Invoke();
         }
-        else if(HealthValue == 0)
+        else if(HealthValue <= 0)
         {
             Debug.Log("Die");
             OnHealthChange?.Invoke(HealthValue);
+            OnGameOver?.Invoke();
         }
        
     }

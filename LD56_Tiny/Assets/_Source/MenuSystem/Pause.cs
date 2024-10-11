@@ -28,10 +28,10 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1f;
         _isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
-        foreach (GameObject item in ui)
+        /*foreach (GameObject item in ui)
         {
             item.SetActive(true);
-        }
+        }*/
     }
     public void PauseGame()
     {
@@ -40,9 +40,9 @@ public class Pause : MonoBehaviour
         Time.timeScale = 0f;
         _isPaused = true;
         Cursor.lockState = CursorLockMode.None;
-        foreach (GameObject item in ui) 
+        /*foreach (GameObject item in ui) 
         {
             item.SetActive(false);
-        }
+        }*/
     }
 }
