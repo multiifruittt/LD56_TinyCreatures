@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private CinemachineVirtualCamera cinemachine; 
     [SerializeField] private AudioSource moveSound;
+    [SerializeField] private GameObject tutorialCanvas;
 
     private Health _health;
     private CinemachineTransposer _transposer;
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
 
     bool isRunning = false;
     bool isJumping = false;
+    bool isTutorialOpen = true;
 
     public void Construct(Health health)
     {
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        tutorialCanvas.SetActive(true);
         _transposer = cinemachine.GetCinemachineComponent<CinemachineTransposer>(); ;
         _characterController = GetComponent<CharacterController>();
         _cameraTransform = Camera.main.transform;
@@ -70,6 +73,10 @@ public class PlayerController : MonoBehaviour
         
         if (moveX != 0 || moveZ != 0)
         {
+            if(isTutorialOpen)
+            {
+                tutorialCanvas.SetActive(false);
+            }
             if (_characterController.isGrounded)
             {
                 isRunning = true;

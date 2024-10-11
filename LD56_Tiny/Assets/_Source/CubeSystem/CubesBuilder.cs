@@ -8,15 +8,16 @@ public class CubesBuilder : MonoBehaviour
     [SerializeField] private LayerMask playerMask;
     [SerializeField] private List<GameObject> cubes;
     [SerializeField] private int _maxIndex;
-
+    [SerializeField] private GameObject worldCanvas;
     private bool _isInRange = false;
+
     private int _indexOfCube = 0;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (PlayerPrefs.GetInt("Cubes") > 0 && _indexOfCube < _maxIndex)
+            if (PlayerPrefs.GetInt("Cubes") > 0 && _indexOfCube < _maxIndex && _isInRange)
             {
                   cubes[_indexOfCube].SetActive(true);
                   _indexOfCube += 1;
@@ -30,6 +31,8 @@ public class CubesBuilder : MonoBehaviour
         if ((playerMask & (1 << other.gameObject.layer)) != 0)
         {
             _isInRange = true;
+            Debug.Log("Builder");
+            worldCanvas.SetActive(true);
         }
 
     }
@@ -38,6 +41,7 @@ public class CubesBuilder : MonoBehaviour
         if ((playerMask & (1 << other.gameObject.layer)) != 0)
         {
             _isInRange = false;
+            worldCanvas.SetActive(false);
         }
     }
 }
