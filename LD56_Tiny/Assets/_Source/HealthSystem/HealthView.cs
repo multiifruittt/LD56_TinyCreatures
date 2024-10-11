@@ -7,7 +7,7 @@ public class HealthView : MonoBehaviour
 {
     [SerializeField] private List<Image> HealthBars;
     private Health _score;
-
+    
     public void Construct(Health score)
     {
         _score = score;

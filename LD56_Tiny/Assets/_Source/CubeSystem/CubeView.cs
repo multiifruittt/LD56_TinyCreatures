@@ -27,7 +27,6 @@ public class CubeView : MonoBehaviour
             item.gameObject.SetActive(false);
         }
         CubesBars[curScore].gameObject.SetActive(true);
-        Debug.Log("Right");
     }
     void OnDisable()
     {

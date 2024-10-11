@@ -26,7 +26,6 @@ public class Pause : MonoBehaviour
         panel.SetActive(false);
         Time.timeScale = 1f;
         _isPaused = false;
-        Debug.Log("continue");
         Cursor.lockState = CursorLockMode.Locked;
     }
     public void PauseGame()
@@ -34,7 +33,6 @@ public class Pause : MonoBehaviour
         panel.SetActive(true);
         Time.timeScale = 0f;
         _isPaused = true;
-        Debug.Log("pause");
         Cursor.lockState = CursorLockMode.None;
     }
 }
