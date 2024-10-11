@@ -39,7 +39,6 @@ public class RobotCleaner : MonoBehaviour
                     timer = 0f;
                     current = next;
                     next++;
-                    Debug.Log(next);
                     timerForWaiting = 0f;
                 }
                 else
@@ -47,7 +46,6 @@ public class RobotCleaner : MonoBehaviour
                     timer = 0f;
                     current = next;
                     next--;
-                    Debug.Log(next);
                     timerForWaiting = 0f;
                 }
             }

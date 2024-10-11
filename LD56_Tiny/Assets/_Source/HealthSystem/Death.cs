@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class Death : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private PlayerController controller;
+    [SerializeField] private Animator animator;
+    [SerializeField] private CheckPoint checkPoint;
+    private Health _health;
+
+    public void Construct(Health health)
     {
-        
+        _health = health;
+        _health.OnDeath += Dieing;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Dieing()
     {
-        
+        StartCoroutine("Die");
+    }
+    IEnumerator Die()
+    {
+        controller.enabled = false;
+        animator.Play("Dieing");
+        yield return new WaitForSeconds(2);
+        controller.enabled = true;
+        checkPoint.Teleport();
+       // controller.enabled = false;
+        yield return new WaitForSeconds(1);
+        controller.enabled = true;
+
     }
 }

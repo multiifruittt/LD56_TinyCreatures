@@ -20,6 +20,7 @@ public class CheckPoint : MonoBehaviour
     }
     private void Start()
     {
+        lastCheckpointPosition = playerTransform.position;
         //GetComponent<CharacterController>().enabled = true;
         Teleport();
     }
@@ -27,8 +28,8 @@ public class CheckPoint : MonoBehaviour
     {
         if (lastCheckpointPosition != Vector3.zero)
         {
+            Debug.Log(lastCheckpointPosition);
             characterController.enabled = false;
-            Debug.Log("Teleport");
             playerTransform.position = new Vector3( lastCheckpointPosition.x, lastCheckpointPosition.y + 2, lastCheckpointPosition.z) ;
             characterController.enabled = true;
         }

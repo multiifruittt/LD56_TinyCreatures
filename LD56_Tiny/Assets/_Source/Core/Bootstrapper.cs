@@ -16,6 +16,7 @@ public class Bootstrapper : MonoBehaviour
     [SerializeField] private List<Cubes> cubes;
     [SerializeField] private FallDownDamage fall;
     [SerializeField] private List<KillingObj> killingObj;
+    [SerializeField] private Death death;
 
     private Health _health;
     private CubesScore _cubesScore;
@@ -35,6 +36,7 @@ public class Bootstrapper : MonoBehaviour
         healthView.Construct(_health);
         cubeView.Construct(_cubesScore);
         fall.Construct(_health);
+        death.Construct(_health);
         foreach (KillingObj kill in killingObj)
         {
             {
