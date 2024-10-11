@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,9 +14,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private List <Scrollbar>  scrollbars;
     [SerializeField] private List<JumpForceRanges> jumpForceRange;
     [SerializeField] private Animator animator;
+    [SerializeField] private CinemachineVirtualCamera cinemachine;
 
     private Health _health;
-    
+    private CinemachineTransposer _transposer;
 
 
     private CharacterController _characterController;
@@ -44,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-      
+        _transposer = cinemachine.GetCinemachineComponent<CinemachineTransposer>(); ;
         _characterController = GetComponent<CharacterController>();
         _cameraTransform = Camera.main.transform;
 
@@ -142,7 +144,13 @@ public class PlayerController : MonoBehaviour
         _verticalLookRotation -= mouseY;
         _verticalLookRotation = Mathf.Clamp(_verticalLookRotation, -90f, 90f);
 
-        _cameraTransform.localRotation = Quaternion.Euler(_verticalLookRotation, 0f, 0f);
+        if (_verticalLookRotation >= 20f)
+        {
+
+            _verticalLookRotation = 20f;
+        }
+        _transposer.m_FollowOffset.y = _verticalLookRotation;
+        //_cameraTransform.localRotation = Quaternion.Euler(_verticalLookRotation, 0f, 0f);
     }
    
     private void JumpScale()
