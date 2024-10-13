@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
+
    public void LoadSceneByIndex(int index)
     {
         SceneManager.LoadScene(index);
