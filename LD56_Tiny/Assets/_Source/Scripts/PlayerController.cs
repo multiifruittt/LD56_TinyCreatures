@@ -46,9 +46,14 @@ public class PlayerController : MonoBehaviour
     {
         _health = health;
     }
-
+    private void OnEnable()
+    {
+        isJumping = false;
+        isRunning = false;
+    }
     void Start()
     {
+        
         tutorialCanvas.SetActive(true);
         _transposer = cinemachine.GetCinemachineComponent<CinemachineTransposer>(); ;
         _characterController = GetComponent<CharacterController>();
@@ -137,7 +142,7 @@ public class PlayerController : MonoBehaviour
         }
         if(_characterController.isGrounded == false)
         {
-            _velocity.y -= _gravity / 10f * Time.deltaTime;
+            _velocity.y -= _gravity / 30f * Time.deltaTime;
              Debug.Log("jumping");
         }
         if (_characterController.isGrounded == true)

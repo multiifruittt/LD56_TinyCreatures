@@ -3556,7 +3556,6 @@ MonoBehaviour:
   - {fileID: 2003841427}
   - {fileID: 2090222086}
   - {fileID: 931381340}
-  - {fileID: 0}
   fall: {fileID: 1750043958}
   killingObj:
   - {fileID: 589629257}
@@ -5596,7 +5595,7 @@ Transform:
   m_GameObject: {fileID: 614956420}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 171.49, y: 113.129555, z: -415.69}
+  m_LocalPosition: {x: 167.67, y: 114.89, z: -408.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19773,7 +19772,7 @@ PrefabInstance:
       objectReference: {fileID: 432793257}
     - target: {fileID: 3880968981209686580, guid: 94039321cb8faf946b5a27ae720c6fb4, type: 3}
       propertyPath: _mouseSensitivity
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3880968981209686580, guid: 94039321cb8faf946b5a27ae720c6fb4, type: 3}
       propertyPath: scrollbars.Array.data[0]
