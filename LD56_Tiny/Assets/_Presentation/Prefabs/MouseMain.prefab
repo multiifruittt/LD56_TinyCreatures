@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4139459251613664624}
   - component: {fileID: 9085314011237206269}
-  - component: {fileID: 2591788537213483130}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -84,14 +83,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &2591788537213483130
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4302453233393937494}
-  m_Enabled: 1
 --- !u!1 &7046242012003163635
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,6 +913,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   animator: {fileID: 6233960155804342819}
+  cinemachine: {fileID: 0}
+  moveSound: {fileID: 0}
+  tutorialCanvas: {fileID: 0}
 --- !u!114 &2406054155854805004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -936,6 +930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 3880968981209686580}
   ladderController: {fileID: 3235781662847666285}
+  animator: {fileID: 0}
 --- !u!114 &3235781662847666285
 MonoBehaviour:
   m_ObjectHideFlags: 0
