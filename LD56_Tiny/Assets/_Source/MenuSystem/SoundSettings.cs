@@ -17,6 +17,7 @@ public class SoundSettings : MonoBehaviour
     [SerializeField] private string volumeName;
     private void Start()
     {
+        slider.value = PlayerPrefs.GetFloat (volumeName);
         UpdateVolumeOnChange(slider.value);
         slider.onValueChanged.AddListener(delegate { UpdateVolumeOnChange(slider.value); });
     }
@@ -24,6 +25,7 @@ public class SoundSettings : MonoBehaviour
     {
         if(audioMixer != null)
         {
+            PlayerPrefs.SetFloat (volumeName, value);
             audioMixer.SetFloat(volumeName, Mathf.Log(value) * 20f);
         }
         
