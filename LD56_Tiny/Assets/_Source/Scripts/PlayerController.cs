@@ -58,14 +58,11 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-       
+        //Move();
     }
     void Update()
     {
-            
-        
-        
-
+        //Debug.Log(_characterController.isGrounded);
         if (isRunning)
         {
             scrollbars[index].gameObject.active = false;
@@ -132,15 +129,22 @@ public class PlayerController : MonoBehaviour
 
         _characterController.Move(move * _moveSpeed * Time.deltaTime);
 
-        if (_characterController.isGrounded)
-        {
-            //_velocity.y -= _gravity / 2 * Time.deltaTime;
-        }
-        else
+        if (_characterController.isGrounded == false && isJumping)
         {
             _velocity.y -= _gravity * Time.deltaTime;
+            
+            Debug.Log("falling");
         }
-        
+        if(_characterController.isGrounded == false)
+        {
+            _velocity.y -= _gravity / 10f * Time.deltaTime;
+             Debug.Log("jumping");
+        }
+        if (_characterController.isGrounded == true)
+        {
+            _velocity.y -= _gravity * Time.deltaTime;
+            Debug.Log("jumping");
+        }
 
         _characterController.Move(_velocity * Time.deltaTime);
     }

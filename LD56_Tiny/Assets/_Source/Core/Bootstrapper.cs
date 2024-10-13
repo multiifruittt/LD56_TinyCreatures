@@ -45,7 +45,7 @@ public class Bootstrapper : MonoBehaviour
         }
         foreach (Cubes cub in cubes)
         {
-            cub.Construct(_cubesScore);
+            //cub.Construct(_cubesScore);
         }
         Time.timeScale = 1.0f;
         foreach (GameObject item in scrollbars)
